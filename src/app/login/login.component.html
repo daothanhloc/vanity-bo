@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="image-left"></div>
+  <div class="form-login">
+    <h4 style="color: rgb(180, 38, 85);"><strong>VANITY</strong></h4>
+    <p style="font-size:14px; color: #BBB;">Bienvenu sur votre interface de gestion</p>
+    <div class="login">
+      <input type="text" placeholder="  Login" #email>
+      <input type="password" placeholder="  Mot de passe" #password>
+      <p style="color: #AAA; font-size: 12px;">Passeport  oublié</p>
+      <button class="login-btn" (click)="login(email.value, password.value)">Se conecter</button>
+    </div>
+  </div>
+</div>

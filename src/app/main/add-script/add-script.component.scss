@@ -1,0 +1,31 @@
+.container {
+    margin: 0;
+    padding: 20px 50px;
+    max-width: 100%;
+    .effect-form    {
+        background: #ffffff;
+        padding: 20px;
+        .effect-form-2  {
+            display: flex;
+            justify-content: space-between;
+            .effect-item   {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                p   {
+                    padding: 0;
+                    margin: 0;
+                }
+                input {
+                    height: 30px;
+                    margin: 0 10px;
+                }
+            }
+        }
+        .effect-button  {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 100px;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="account-details">
+        <div class="account-name">
+            <div class="name">
+                <h3>{{ accountName| uppercase}}</h3>
+            </div>
+            <div class="info">
+                <p><strong>Inscrit depuis le 12/10/2019</strong></p>
+                <p>Plate forme: IOS</p>
+            </div>
+        </div>
+        <div class="account-effects">
+            <div class="title">
+                <p><strong>Effets Achetes</strong></p>
+            </div>
+            <div class="effects">
+                <div class="effect-item" *ngFor="let eff of effect">
+                    <div class="avatar"></div>
+                    <p>{{ eff.name|uppercase }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="account-scripts">
+            <div class="title">
+                <p><strong>Scénarios Achetés</strong></p>
+            </div>
+            <div class="script">
+                <div class="script-item" *ngFor="let scr of script">
+                    <div class="script-icon"></div>
+                    <p> {{ scr.name }}-{{ scr.description }} </p>
+                </div>
+            </div>
+        </div>
+        <div class="account-method">
+            <div class="icons-account">
+                <div class="message-icon space-icons">
+                    <i class="fa fa-envelope-open-o" aria-hidden="true"></i>
+                    <p>CONTACTER</p>
+                </div>
+                <div class="delete-icon space-icons" (click)="deleteById(acc.id)">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                    <p>SUPPRIMER</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="left"></div>
+    <div class="right">
+        <div class="header">
+            <div class="icon space">
+                <i class="fa fa-bell-o" aria-hidden="true"></i>
+            </div>
+            <div class="admin space"><p>ADMIN</p></div>
+            <div class="drop space dropdown">
+                <i class="fa fa-caret-down" aria-hidden="true"></i>
+                <div class="dropdown-content">
+                    <p (click)="logout()">Log out.</p>
+                </div>
+            </div>
+            <div class="avatar space"></div>
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+</div>

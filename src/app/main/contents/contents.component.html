@@ -1,0 +1,51 @@
+<div class="container">
+    <input class="form-control form-control-sm" type="text" placeholder="Search...">
+    <div class="list-account">
+        <ul class="list-group list-group-flush" *ngFor="let acc of Acc">
+            <li class="list-group-item">
+                <div class="info-account">
+                    <p><strong> {{ acc.accountName|uppercase }} </strong></p>
+                    <p style="font-size: 14px"> {{ acc.realm }} </p>
+                </div>
+                <div class="icons-account">
+                    <div class="view-icon space-icons" (click)="viewAccount(acc.id, acc. accountName)">
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                        <p>VOIR</p>
+                    </div>
+                    <div class="message-icon space-icons" (click)="open(content, acc.email)">
+                        <i class="fa fa-envelope-open-o" aria-hidden="true"></i>
+                        <p>CONTACTER</p>
+                    </div>
+                    <div class="delete-icon space-icons" (click)="deleteById(acc.id)">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                        <p>SUPPRIMER</p>
+                    </div>
+                </div>
+            </li>
+          </ul>
+    </div>
+    <ng-template #content let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">New message</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="Subtitle"> Subtitle </label>
+              <div class="input-group">
+                <input id="dateOfBirth" class="form-control">
+              </div>
+              <label for="Subtitle">Message</label>
+              <textarea class="form-control" id="message-text" #content></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click'); sendMail(content.value)">Send!</button>
+        </div>
+      </ng-template>
+      <hr>     
+</div>

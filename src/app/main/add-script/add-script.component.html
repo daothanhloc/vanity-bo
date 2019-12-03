@@ -1,0 +1,36 @@
+<div class="container">
+        <div class="effect-form">
+            <form>
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Titre du scénario</label>
+                  <input type="text" class="form-control" id="exampleFormControlInput1" #name>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Description</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="8" #desc></textarea>
+                </div>
+            </form>
+            <div class="effect-form-2">
+                <div class="effect-item">
+                    <p><strong>Prix</strong></p>
+                    <input type="number" #price>
+                    <p><strong>€</strong></p>
+                </div>
+                <div class="effect-item">
+                    <p><strong>Couleur:</strong></p>
+                </div>
+                <div class="effect-item">
+                    <div class="custom-control custom-switch">
+                        <label class="custom-control-label" for="customSwitch1">Payant</label>
+                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                    </div>  
+                </div>
+            </div> 
+            <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" (change)="upload($event.target.files[0])">
+            <img [appImage]="pathImage" containerId="'images'">
+            <div class="effect-button">
+                <button type="button" class="btn btn-danger">AJOUTER ICONE</button>
+                <button type="button" class="btn btn-dark" (click)="addScript(name.value, desc.value, price.value)">Valider</button>
+            </div>    
+        </div>
+    </div>

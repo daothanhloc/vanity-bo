@@ -1,0 +1,118 @@
+.container {
+    margin: 0;
+    padding: 20px 50px;
+    max-width: 100%;
+    min-height: 100vh;
+    .account-details {
+        .account-name   {
+            display: flex;
+            background: rgb(209, 65, 113);
+            padding: 5px 10px;
+            .name {
+                width: 40%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                h3 {
+                    margin: 0;
+                }
+            }
+            .info {
+                width: 60%;
+                display: flex;
+                flex-direction: column;
+                text-align: end;
+                p {
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+        }
+        .account-effects    {
+            margin-top: 10px;
+            background: rgb(209, 65, 113);
+            display: flex;
+            padding: 20px;
+            .title  {
+                width: 30%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .effects {
+                width: 70%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                .effect-item    {
+                    margin: 0 20px;
+                    text-align: center;
+                    p {
+                        padding: 0;
+                        margin: 0;
+                    }
+                    .avatar {
+                        width: 65px;
+                        height: 65px;
+                        border-radius: 50%;
+                        background: aliceblue;
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+    .account-scripts {
+        margin-top: 10px;
+        background: rgb(209, 65, 113);
+        display: flex;
+        padding: 20px;
+        .title  {
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .script {
+            width: 70%;
+            display: flex;
+            flex-wrap: wrap;
+            .script-item {
+                width: 240px;
+                height: 50px;
+                background: papayawhip;
+                display: flex;
+                border-radius: 5px;
+                margin: 10px 2px;
+                .script-icon {
+                    width: 35%;
+                    height: 50px;
+                    background: purple;
+                    border-radius: 5px;
+                    margin-right: 3px;
+                }
+            }
+        }
+    }
+    .account-method {
+        margin-top: 10px;
+        background: rgb(209, 65, 113);
+        display: flex;
+        justify-content: flex-end;
+        .icons-account {
+            display: flex;
+            font-size: 30px;
+            color: #FFF;
+            .space-icons {
+                margin-right: 20px;
+                text-align: center;
+            }
+            p {
+                font-size: 9px;
+                margin: 0;
+            }
+        }
+    }
+}

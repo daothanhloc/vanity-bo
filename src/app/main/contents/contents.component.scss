@@ -1,0 +1,47 @@
+.container {
+    margin: 0;
+    padding: 20px 50px;
+    max-width: 100%;
+    input {
+        border: 0px solid #AAA;
+        border-radius: 0px;
+    }
+    .list-group {
+        .list-group-item {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &:hover {
+                background: rgb(216, 83, 127);
+                .icons-account  {
+                    color: #FFF;
+                }
+                .info-account {
+                    color: white;
+                }
+            }
+            .info-account   {
+                margin: 15px 0 15px 15px;
+                color: #777;
+                font-size: 14px;
+                p   {
+                    margin: 0;
+                }
+            }
+            .icons-account {
+                display: flex;
+                font-size: 45px;
+                color: rgb(236, 59, 222);
+                .space-icons {
+                    margin-right: 20px;
+                    text-align: center;
+                }
+                p {
+                    font-size: 9px;
+                }
+            }
+        }
+    }
+}
