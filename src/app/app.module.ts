@@ -12,13 +12,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UiSwitchModule } from 'ngx-ui-switch';
 import { Ng2ImgMaxModule } from 'ng2-img-max';
-import { ImageDirective } from './directives/image.directive';
+//import { ImageDirective } from './directives/image.directive';
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     LoginComponent,
-    ImageDirective
+    //ImageDirective
   ],
   imports: [
     BrowserModule,

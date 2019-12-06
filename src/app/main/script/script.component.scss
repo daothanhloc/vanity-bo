@@ -1,0 +1,53 @@
+.container {
+    margin: 0;
+    padding: 80px 50px;
+    max-width: 100%;
+    button {
+        margin: 20px 0;
+        position: fixed;
+        right: 50px;
+        top: 50px;
+    }
+    .script {
+        background: white;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid #AAA;
+        .script-details {
+            width: 55%;
+            .details-specific  {
+                display: flex;
+                p {
+                    font-size: 14px;
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+        }
+        .script-price {
+            width: 140px;
+            font-size: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-left: 1px solid #AAA;
+            border-right: 1px solid #AAA;
+            color: rgb(209, 30, 90);
+        }
+        .script-method {
+            display: flex;
+            .method-item {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin: 0 5px;
+                i {
+                    font-size: 40px;
+                }
+
+            }
+        }
+    }
+}

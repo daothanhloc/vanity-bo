@@ -18,6 +18,7 @@
                 </div>
                 <div class="effect-item">
                     <p><strong>Couleur:</strong></p>
+                    <input type="color" value="#e66465" #colorPicker>
                 </div>
                 <div class="effect-item">
                     <div class="custom-control custom-switch">
@@ -25,12 +26,11 @@
                         <input type="checkbox" class="custom-control-input" id="customSwitch1">
                     </div>  
                 </div>
-            </div> 
-            <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" (change)="upload($event.target.files[0])">
-            <img [appImage]="pathImage" containerId="'images'">
+            </div>
+            <!-- <img [appImage]="pathImage" containerId="images"> -->
             <div class="effect-button">
-                <button type="button" class="btn btn-danger">AJOUTER ICONE</button>
-                <button type="button" class="btn btn-dark" (click)="addScript(name.value, desc.value, price.value)">Valider</button>
+                <input type="file" (change)="upload($event.target.files[0])">
+                <button type="button" class="btn btn-dark" (click)="addScript(name.value, price.value, desc.value, colorPicker.value)">Valider</button>
             </div>    
         </div>
     </div>

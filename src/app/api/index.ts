@@ -55,6 +55,7 @@ import { PayEffectScriptApi } from './services/custom/PayEffectScript';
 import { HistoryApi } from './services/custom/History';
 import { MessageApi } from './services/custom/Message';
 import { EmailApi } from './services/custom/Email';
+import { ContainerApi } from './services/custom/Container';
 /**
 * @module SDKBrowserModule
 * @description
@@ -92,6 +93,7 @@ export class SDKBrowserModule {
         HistoryApi,
         MessageApi,
         EmailApi,
+        ContainerApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
         { provide: SocketDriver, useClass: SocketBrowser }

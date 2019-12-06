@@ -3,21 +3,22 @@
         <form>
             <div class="form-group">
               <label for="exampleFormControlInput1">Titre du scénario</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1">
+              <input type="email" class="form-control" id="exampleFormControlInput1" #name>
             </div>
             <div class="form-group">
               <label for="exampleFormControlTextarea1">Description</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="8"></textarea>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="8" #desc></textarea>
             </div>
         </form>
         <div class="effect-form-2">
             <div class="effect-item">
                 <p><strong>Prix</strong></p>
-                <input type="number">
+                <input type="number" #price>
                 <p><strong>€</strong></p>
             </div>
             <div class="effect-item">
                 <p><strong>Couleur:</strong></p>
+                <input type="color" value="#e66465" #colorPicker>
             </div>
             <div class="effect-item">
                 <div class="custom-control custom-switch">
@@ -26,18 +27,11 @@
                 </div>  
             </div>
         </div> 
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-            </div>
-            <div class="custom-file">
-              <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-            </div>
-          </div>
+        <img appImage [imageSrc]="pathImage" containerId="images">
         <div class="effect-button">
-            <button type="button" class="btn btn-danger">AJOUTER ICONE</button>
-            <button type="button" class="btn btn-primary">AJOUTER AUDIO</button>
-            <button type="button" class="btn btn-dark">Valider</button>
+            <input type="file" (change)="upload($event.target.files[0])">
+            <input type="file" (change)="uploadAudio($event.target.files[0])">
+            <button type="button" class="btn btn-dark" (click)="addEffect(name.value, price.value, desc.value, colorPicker.value)">Valider</button>
         </div>    
     </div>
 </div>

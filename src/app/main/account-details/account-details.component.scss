@@ -55,10 +55,16 @@
                     .avatar {
                         width: 65px;
                         height: 65px;
+                        background: aqua;
                         border-radius: 50%;
-                        background: aliceblue;
-                        margin: 0;
-                        padding: 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        img {
+                            width: 50px;
+                            height: 50px;
+                            border-radius: 50%;
+                        }
                     }
                 }
             }
@@ -82,16 +88,21 @@
             .script-item {
                 width: 240px;
                 height: 50px;
-                background: papayawhip;
+                //background: rgb(187, 183, 177);
                 display: flex;
                 border-radius: 5px;
                 margin: 10px 2px;
                 .script-icon {
-                    width: 35%;
-                    height: 50px;
-                    background: purple;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                   img {    
+                    width: 70px;
+                    height: 40px;
                     border-radius: 5px;
-                    margin-right: 3px;
+                    margin-right: 10px;              
+                   }
                 }
             }
         }

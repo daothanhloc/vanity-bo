@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EffectScriptApi } from 'src/app/api';
 import { UploadFileService } from 'src/app/services/upload-file.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-script',
@@ -9,9 +10,11 @@ import { UploadFileService } from 'src/app/services/upload-file.service';
 })
 export class AddScriptComponent implements OnInit {
   pathImage: string = '';
+  iconName: string = '';
   constructor(
     private effectScriptApi: EffectScriptApi,
-    private uploadFile: UploadFileService
+    private uploadFile: UploadFileService,
+    private router: Router
   ) {
 
   }
@@ -24,25 +27,32 @@ export class AddScriptComponent implements OnInit {
     this.uploadFile.uploadImage(file, 'images').subscribe((result) => {
       console.log(result);
       this.pathImage = result.result.files.file[0].name;
-      console.log(this.pathImage);
+      this.iconName = result.result.files.file[0].name;
     }, err => {
       console.log(err);
     });
   }
 
-  addScript(name: string, price: number, description: string) {
+  addScript(name: string, price: number, description: string, colorPicker: string) {
     const data: string = `{
       "type": "script",
-      "name": "${ name }",
+      "name": "${name}",
+      "color": "${colorPicker}",
+      "icon": "${this.iconName}",
       "price": ${price},
-      "description": "${ description }",
-      "audio": "a",
-      "effectUrl": "a"
+      "description": "${description}",
+      "audio": "string",
+      "effectUrl": "string"
     }`;
+    console.log(data);
     this.effectScriptApi.create(data).subscribe((data) => {
       console.log(data);
+      this.router.navigate(['main/script'])
     }, err => {
       console.log(err);
     })
+  }
+  a(b: string) {
+    console.log(b)
   }
 }

@@ -1,0 +1,27 @@
+<div class="container">
+    <button class="btn btn-dark" routerLink="/main/add-script">AJOUTER SCENARIO</button>
+    <div class="script" *ngFor="let script of scripts">
+        <div class="script-details">
+            <div class="details-title">
+                <h4><strong> {{ script.name }} </strong></h4>
+            </div>
+            <div class="details-specific">
+                <img appImage [imageSrc]="script.icon" alt="" width="120px" height="auto" style="margin-right:  10px; border-radius: 10px">
+                <p> {{ script.description }} </p>
+            </div>
+        </div>
+        <div class="script-price">
+            <p><strong> {{ script.price }} € </strong></p>
+        </div>
+        <div class="script-method">
+            <div class="method-item">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+                <p>Modifier</p>
+            </div>
+            <div class="method-item" (click)="deleteScript(script.id)">
+                <i class="fa fa-times" aria-hidden="true"></i>
+                <p>Supprimer</p>
+            </div>
+        </div>
+    </div>
+</div>

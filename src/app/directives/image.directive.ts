@@ -1,25 +1,30 @@
 import { Directive, Input, OnChanges, SimpleChanges, ElementRef } from '@angular/core';
-import { LoopBackAuth, LoopBackConfig } from '../api';
+import { LoopBackConfig } from '../api';
 
 @Directive({
   selector: '[appImage]'
 })
 export class ImageDirective implements OnChanges {
-  @Input('appImage') imageSrc: string;
-  @Input() containerId: string;
+
+  @Input() imageSrc: string;
+  @Input() audioSrc: string;
+  @Input() colorPicker: string;
+
   constructor(
     
     private el: ElementRef
   ) { 
   }
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.path) {
       this.changeImage();
-    }
   }
   changeImage() {
     if (this.el.nativeElement.tagName === 'IMG')
-    this.el.nativeElement.src = this.getImage();
+      this.el.nativeElement.src = this.getImage();
+    else {
+      console.log('a');
+      this.el.nativeElement.src = this.getAudio();
+    }
   }
   getImage() {
     if(this.imageSrc === '') {
@@ -27,9 +32,20 @@ export class ImageDirective implements OnChanges {
       return '';
       
     } else {
-      const url = `${LoopBackConfig.getPath()}/${LoopBackConfig.getApiVersion()}/Containers/` + this.containerId + '/downloads/';
+      const url = `${LoopBackConfig.getPath()}/${LoopBackConfig.getApiVersion()}/Containers/images/download/`;
+      console.log(this.imageSrc);
       return url + this.imageSrc;
     }
+  }
+  getAudio() {
+    if(this.audioSrc === '') {
+      // TODO default
+      return '';
+      
+    } else {
+      const url = `${LoopBackConfig.getPath()}/${LoopBackConfig.getApiVersion()}/Containers/audio/download/`;
+      console.log(this.audioSrc);
+      return url + this.audioSrc;
+    }
   } 
-
 }

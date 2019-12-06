@@ -6,6 +6,8 @@ import { HomeComponent } from './home/home.component';
 import { AccountDetailsComponent } from './account-details/account-details.component';
 import { AddEffectComponent } from './add-effect/add-effect.component';
 import { AddScriptComponent } from './add-script/add-script.component';
+import { ScriptComponent } from './script/script.component';
+import { EffectComponent } from './effect/effect.component';
 
 
 const mainRoutes: Routes = [
@@ -32,6 +34,14 @@ const mainRoutes: Routes = [
     {
       path: 'add-script',
       component: AddScriptComponent
+    },
+    {
+      path: 'script',
+      component: ScriptComponent
+    },
+    {
+      path: 'effect',
+      component: EffectComponent
     }
 ] }
 ];

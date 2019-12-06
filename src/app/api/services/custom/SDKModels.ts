@@ -7,6 +7,7 @@ import { PayEffectScript } from '../../models/PayEffectScript';
 import { History } from '../../models/History';
 import { Message } from '../../models/Message';
 import { Email } from '../../models/Email';
+import { Container } from '../../models/Container';
 
 export interface Models { [name: string]: any }
 
@@ -21,6 +22,7 @@ export class SDKModels {
     History: History,
     Message: Message,
     Email: Email,
+    Container: Container,
     
   };
 

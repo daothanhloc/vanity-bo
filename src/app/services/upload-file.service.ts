@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Ng2ImgMaxModule, Ng2ImgMaxService } from 'ng2-img-max';
 import { LoopBackConfig } from '../api';
 import { Observable } from 'rxjs';
@@ -9,6 +9,11 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UploadFileService {
+  uploadedAudio: any;
+  isLoading: Boolean;
+  audioName = '';
+  listAudios: any [] = [];
+  isLoadingAudio = false;
 
   constructor(
     private ng2ImgMaxService: Ng2ImgMaxService,
@@ -35,4 +40,17 @@ export class UploadFileService {
             });
       });
     }
+    uploadAudio(file: any)  {
+      const url = `${LoopBackConfig.getPath()}/${LoopBackConfig.getApiVersion()}/Containers/audio/upload`;
+      return Observable.create((obs) => {
+        const formData = new FormData();
+        formData.append('file', file);
+        return this.httpClient.post(url, formData).subscribe((result: any) => {
+          obs.next(result);
+        },
+        err => {
+          obs.next(err);
+        });
+      });
+  }
 }

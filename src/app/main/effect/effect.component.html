@@ -1,0 +1,31 @@
+<div class="container">
+        <button class="btn btn-dark" routerLink="/main/add-effect">AJOUTER SCENARIO</button>
+        <div class="effect" *ngFor="let effect of effects">
+            <div class="effect-details">
+                <div class="details-title">
+                    <h4><strong> {{ effect.name }} </strong></h4>
+                </div>
+                <div class="details-specific">
+                    <img appImage [imageSrc]="effect.icon" alt="" width="100px" height="auto" style="margin-right:  10px; border-radius: 50%">
+                </div>
+            </div>
+            <div class="effect-play" (click)="setAudio(effect.audio); play()">
+                <audio appImage [audioSrc]="effect.audio" id="player"></audio>
+                <i *ngIf="isPlaying"  class="fa fa-play" aria-hidden="true"></i>
+                <i *ngIf="!isPlaying" class="fa fa-pause" aria-hidden="true"></i>          
+            </div>
+            <div class="effect-price">
+                <p><strong> {{ effect.price }} € </strong></p>
+            </div>
+            <div class="effect-method">
+                <div class="method-item">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                    <p>Modifier</p>
+                </div>
+                <div class="method-item" (click)="deleteEffect(effect.id)">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                    <p>Supprimer</p>
+                </div>
+            </div>
+        </div> 
+    </div>

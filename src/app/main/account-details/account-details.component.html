@@ -15,7 +15,9 @@
             </div>
             <div class="effects">
                 <div class="effect-item" *ngFor="let eff of effect">
-                    <div class="avatar"></div>
+                    <div class="avatar" [ngStyle]="{'background': eff.color}">
+                        <img appImage [imageSrc]="eff.icon" alt="">
+                    </div>
                     <p>{{ eff.name|uppercase }}</p>
                 </div>
             </div>
@@ -25,9 +27,11 @@
                 <p><strong>Scénarios Achetés</strong></p>
             </div>
             <div class="script">
-                <div class="script-item" *ngFor="let scr of script">
-                    <div class="script-icon"></div>
-                    <p> {{ scr.name }}-{{ scr.description }} </p>
+                <div class="script-item" *ngFor="let scr of script"  [ngStyle]="{'background': scr.color}">
+                    <div class="script-icon">
+                        <img appImage [imageSrc]="scr.icon" alt="">
+                    </div>
+                    <p> {{ scr.name }} </p>
                 </div>
             </div>
         </div>
